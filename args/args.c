@@ -13,7 +13,7 @@ int main(int argc/*argument count*/, char* argv[]/*argument vector*/)
 		printf("argument 1:	%s\n", argv[0]);//whereas in the argv it is stored at index 0
 		printf("argument:	%s\n", argument);
 	}
-	if (argc = 2)
+	if (argc = 2)//this logic will only execute with enough arguments provided to prevent segfault
 	{
 		printf("argument 2:	%s\n", argv[1]);
 		argument = argv[1];

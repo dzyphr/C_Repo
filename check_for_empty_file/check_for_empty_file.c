@@ -4,6 +4,11 @@
 #define SIZE 256
 int main(int argc, char* argv[])
 {
+	if (argc < 2)
+	{
+		printf("\nplease give the filepath to check as an argument\n");
+		return -1;
+	}
 	FILE* fp;
 	char* filename;
 	char cmd[SIZE];

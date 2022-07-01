@@ -25,6 +25,6 @@ int main(int argc, char* argv[])
 		printf("Error opening pipe!\n");
                 return -1;
 	}
-	system(cmd);//if the file is blank
+	system(cmd);//if the file is blank nothing will be printed
 	return 0;
 }

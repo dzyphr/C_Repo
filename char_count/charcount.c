@@ -21,26 +21,33 @@ char* getHomePath(char homepath[])
 		printf("error opening pipe\n");
 		exit(1);
 	}
-	char output[BUFFSIZE];
-	while (fgets(buffer, BUFFSIZE, fp) != NULL)
-	{
-		strcat(output, buffer);
-	}
-	if (pclose(fp))
-	{
-		printf("Command not found or exited with error status\n");
-		exit(1);
-	}
-	if (strcmp(output, "")==0)
-	{
-		printf("NullOutput");
-	}
 	else
 	{
-		strcpy(homepath, output);
+		char output[BUFFSIZE];
+		while (fgets(buffer, BUFFSIZE, fp) != NULL)
+		{
+			strcat(output, buffer);
+		}
+		if (pclose(fp))
+		{
+			printf("Command not found or exited with error status\n");
+			exit(1);
+		}
+		else
+		{
+			if (strcmp(output, "")==0)
+			{
+				printf("NullOutput");
+				exit(1);
+			}
+			else
+			{
+				strcpy(homepath, output);
+			}
+			homepath[strlen(homepath)-1] = '\0';//get rid of the newline added by popen
+			result = homepath;
+		}
 	}
-	homepath[strlen(homepath)-1] = '\0';//get rid of the newline added by popen
-	result = homepath;
 	return result;
 }
 

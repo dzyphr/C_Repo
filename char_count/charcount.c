@@ -16,6 +16,6 @@ int main(int argc, char* argv[])
 
 int charCount(char* string)
 {
-	int charcount = strlen(string);
-	printf("%d", charcount);
+	long unsigned charcount = strlen(string);
+	printf("\nCharacters: %lu\n", charcount);
 }

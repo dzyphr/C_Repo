@@ -1,7 +1,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include<stdio.h>
-#define SIZE 256
+#define SIZE 65792
 int main(int argc, char* argv[])
 {
 	if (argc < 2)
@@ -25,6 +25,7 @@ int main(int argc, char* argv[])
 		printf("Error opening pipe!\n");
                 return -1;
 	}
-	system(cmd);//if the file is blank nothing will be printed
+	//printf("%s", cmd);//if the file is blank nothing will be printed
+	system(cmd);
 	return 0;
 }

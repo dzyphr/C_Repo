@@ -25,7 +25,9 @@ int main(int argc, char* argv[])
 		printf("Error opening pipe!\n");
                 return -1;
 	}
-	//printf("%s", cmd);//if the file is blank nothing will be printed
+	printf("%s", cmd);
+	//prints out the command optional for debug
+	//if the file is blank nothing will be printed
 	system(cmd);
 	return 0;
 }
